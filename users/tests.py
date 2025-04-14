@@ -1,5 +1,8 @@
 from django.contrib.auth import get_user_model
 from django.test import TestCase
+from django.urls import reverse
+
+from users.forms import CustomUserCreationForm
 
 
 class CustomUserTests(TestCase):
@@ -32,3 +35,18 @@ class CustomUserTests(TestCase):
         self.assertTrue(user.is_staff)
 
 
+class SignupTests(TestCase):
+    
+    def setUp(self):
+        url = reverse('signup')
+        self.response = self.client.get(url)
+
+    def test_signup_template(self):
+        self.assertEqual(self.response.status_code, 200)
+        self.assertTemplateUsed(self.response, 'registration/signup.html')
+        self.assertContains(self.response, 'Signup')
+        self.assertNotContains(self.response, 'Some dummy content')
+
+    def test_signup_form(self):
+        form = self.response.context.get('form')
+        self.assertIsInstance(form, CustomUserCreationForm)
