@@ -1,0 +1,14 @@
+h1 {
+  color: red;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.book-cover {
+  width: auto;
+  height: 300px;
+  border-radius: 10px;
+}
