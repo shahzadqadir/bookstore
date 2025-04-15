@@ -9,6 +9,9 @@ services:
     depends_on:
       db:
         condition: service_healthy
+    environment:
+      - SECRET_KEY=django-insecure-$s6x0!70=y=u*p73nxe9*h&vj#ixmamc4m8fvrtjr8-feuh$in
+      - DEBUG=1
 
   db:
     image: postgres:15
