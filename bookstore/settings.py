@@ -142,3 +142,4 @@ AUTHENTICATION_BACKENDS = [
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 ACCOUNT_SIGNUP_FIELDS = ['email*', 'password1*']
 ACCOUNT_LOGIN_METHODS = {'email'}
+DEFAULT_FROM_EMAIL = 'admin@djangobookstore.com'
