@@ -8,4 +8,15 @@
   <div><p><strong>By</strong> {{ book.author }}</p></div>
   <div><p>Price: ${{ book.price }}</p></div>
 
+  <div class="reviews">
+    <hr>
+    <h4>Reviews</h4>
+    {% for review in book.reviews.all %}
+    <p>
+      By {{ review.author.username }}<br>
+      {{ review.review }}
+    </p>
+    {% endfor %}
+  </div>
+
 {% endblock %}
