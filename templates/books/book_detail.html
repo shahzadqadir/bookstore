@@ -5,6 +5,9 @@
 {% block content %}
 
   <div><h4>{{ book.title }}</h4></div>
+  {% if book.cover %}
+    <img class="book-cover" src="{{ book.cover.url }}" alt="{{ book.cover.title }}">
+  {% endif %}
   <div><p><strong>By</strong> {{ book.author }}</p></div>
   <div><p>Price: ${{ book.price }}</p></div>
 
