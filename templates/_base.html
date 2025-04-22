@@ -28,7 +28,9 @@
               <a class="nav-link" href="{% url 'account_login' %}">Login</a>
             <a class="nav-link" href="{% url 'account_signup' %}" >Signup</a>
             {% endif %}
-            
+            <form action="{% url 'search_results' %}" method="get">
+              <input class="mt-1" type="text" name="search" id="search" placeholder="Search a book" />
+            </form>
           </div>
         </div>
       </div>
