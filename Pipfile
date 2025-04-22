@@ -10,6 +10,7 @@ django-crispy-forms = "*"
 crispy-bootstrap5 = "*"
 django-allauth = "*"
 pillow = "*"
+django-debug-toolbar = "==5.1.0"
 
 [dev-packages]
 
